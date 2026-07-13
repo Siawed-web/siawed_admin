@@ -1,0 +1,142 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-nunito), "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ============================================================
+   02. TYPOGRAPHY
+   ============================================================ */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-playfair), Georgia, serif;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+/* Section heading */
+.section-heading {
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: $charcoal;
+  margin-bottom: 16px;
+}
+
+.section-heading em {
+  font-style: italic;
+}
+.em-blue {
+  color: $blue;
+}
+.em-orange {
+  color: $orange;
+}
+.em-teal {
+  color: $teal;
+}
+
+/* Lead paragraph */
+.lead {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: $slate;
+  max-width: 600px;
+}
+
+/* Inverted lead (on dark bg) */
+.lead-inv {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* ============================================================
+   03. UTILITY CLASSES
+   ============================================================ */
+
+/* Eyebrow label above headings */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+}
+.eyebrow-blue {
+  color: $blue;
+}
+.eyebrow-blue::before {
+  background: $blue;
+}
+.eyebrow-orange {
+  color: $orange;
+}
+.eyebrow-orange::before {
+  background: $orange;
+}
+.eyebrow-teal {
+  color: $teal;
+}
+.eyebrow-teal::before {
+  background: $teal;
+}
+.eyebrow-green {
+  color: $green;
+}
+.eyebrow-green::before {
+  background: $green;
+}
+
+/* Heading inverted (on dark bg) */
+.heading-inv {
+  color: #fff;
+}
+

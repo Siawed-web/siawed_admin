@@ -1,0 +1,158 @@
+@import "@/styles/scss/_variables.scss";
+
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: $ivory;
+  font-family: var(--font-primary, sans-serif);
+
+  .sidebar {
+    width: 260px;
+    background-color: $blue-deep;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+
+    .sidebarHeader {
+      padding: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .closeMenu {
+        display: none;
+        background: none;
+        border: none;
+        color: $white;
+        font-size: 1.5rem;
+      }
+    }
+
+    .sidebarNav {
+      padding: 20px 0;
+      flex-grow: 1;
+
+      .navItem {
+        padding: 15px 25px;
+        display: flex;
+        align-items: center;
+        color: $mist;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.2s, color 0.2s;
+        gap: 15px;
+
+        &:hover, &.active {
+          background-color: rgba(255, 255, 255, 0.1);
+          color: $white;
+          border-left: 4px solid $orange;
+        }
+
+        i {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .sidebarFooter {
+      padding: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .mainContent {
+    flex-grow: 1;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+
+    .topbar {
+      height: 60px;
+      background-color: $white;
+      box-shadow: $sh-sm;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 900;
+
+      .menuToggle {
+        display: none;
+        background: none;
+        border: none;
+        color: $blue-deep;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .topbarTitle {
+        margin-left: 15px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $slate;
+      }
+    }
+
+    .contentArea {
+      padding: 30px;
+      flex-grow: 1;
+    }
+  }
+
+  /* Overlay for mobile */
+  .mobileOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .adminLayout {
+    .sidebar {
+      transform: translateX(-100%);
+      
+      &.open {
+        transform: translateX(0);
+      }
+
+      .sidebarHeader {
+        .closeMenu {
+          display: block;
+        }
+      }
+    }
+
+    .mainContent {
+      margin-left: 0;
+
+      .topbar {
+        .menuToggle {
+          display: block;
+        }
+      }
+    }
+
+    .mobileOverlay.open {
+      display: block;
+    }
+  }
+}

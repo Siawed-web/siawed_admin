@@ -1,0 +1,41 @@
+.Layout {
+
+
+    .enquireButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+
+    }
+
+    .WhatsappButton {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1000;
+        cursor: pointer;
+        width: fit-content;
+    }
+
+    @include respond-below(md) {
+
+        .enquireButton {
+
+            // bottom: 10px;
+            // right: 0px;
+
+            b {
+                display: none;
+            }
+        }
+
+        // .WhatsappButton {
+
+        //     bottom: 10px;
+        //     right: 0px;
+
+        // }
+    }
+
+}

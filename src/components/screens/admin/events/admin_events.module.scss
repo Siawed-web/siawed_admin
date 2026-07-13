@@ -1,0 +1,97 @@
+.adminEvents {
+  background: $white;
+  @include defaultBox;
+  padding: 30px;
+  border-radius: $r;
+
+  .headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $blue-deep;
+      margin: 0;
+    }
+  }
+
+  .tableResponsive {
+    overflow-x: auto;
+  }
+
+  .eventsTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    th {
+      background-color: $parchment;
+      color: $slate;
+      font-weight: 600;
+      padding: 15px;
+      text-align: left;
+      border-bottom: 2px solid $mist;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 15px;
+      vertical-align: middle;
+      border-bottom: 1px solid $mist;
+      color: $charcoal;
+
+      .eventThumbnail {
+        width: 60px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+
+        button {
+          padding: 6px 12px;
+          border: none;
+          border-radius: 4px;
+          font-size: 0.85rem;
+          cursor: pointer;
+          transition:
+            background-color 0.2s,
+            color 0.2s;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          &.editBtn {
+            background-color: $blue-light;
+            color: $blue-deep;
+
+            &:hover {
+              background-color: $blue;
+              color: $white;
+            }
+          }
+
+          &.deleteBtn {
+            background-color: #fee2e2;
+            color: #b91c1c;
+
+            &:hover {
+              background-color: #ef4444;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+}

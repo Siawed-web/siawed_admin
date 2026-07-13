@@ -1,0 +1,167 @@
+.RightMenu {
+  display: flex;
+  align-items: center;
+
+  // gap: 10px;
+
+  .MenuButton {
+    // display: none;
+    margin-left: 20px;
+
+    background-color: $color_2;
+    padding: 3px;
+    border-radius: 4px;
+
+    svg {
+      font-size: 30px;
+      color: $color_1;
+      cursor: pointer;
+    }
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  @include respond-below(md) {
+    margin-top: 24px;
+    .MenuButton {
+      display: block;
+    }
+
+    .callBtn {
+      display: none;
+
+      svg {
+        margin: 0;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+.drawer {
+  border-left: none;
+  background-color: $color_1;
+}
+
+.drawerHeader {
+  padding: 15px 20px;
+  border-bottom: 1px solid white;
+
+  :global(.btnClose) {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.drawerBody {
+  padding: 15px 20px;
+
+  .row {
+    margin-bottom: 16px;
+    // border-bottom: 1px solid white;
+    padding-bottom: 24px;
+
+    @include respond-below(md) {
+      display: none;
+    }
+    b,
+    p {
+      color: red;
+    }
+
+    b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 4px;
+
+      &:hover {
+        p {
+          color: $color_1;
+        }
+      }
+    }
+  }
+}
+
+.navSm {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    // border-bottom: 1px solid white;
+    margin-bottom: 32px;
+
+    a,
+    p {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: white;
+      padding: 8px 12px;
+      margin-bottom: 0px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      background: transparent;
+      text-decoration: none;
+
+      &:hover,
+      &.activeDropdownParent {
+        color: white !important;
+        background: $color_1;
+        transform: translateX(3px);
+      }
+    }
+
+    .dropdown {
+      overflow: hidden;
+      animation: openDropDown 0.4s ease forwards;
+      padding-left: 15px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-left: 2px solid rgba($color_1, 0.15);
+
+      a {
+        margin-left: 0;
+        border: none;
+        padding: 6px 12px;
+        margin-bottom: 3px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: white;
+        border-radius: 6px;
+
+        &:hover {
+          background: rgba($color_1, 0.08);
+
+          transform: translateX(3px);
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes openDropDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 600px;
+  }
+}

@@ -1,0 +1,101 @@
+.PageBanner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // A gradient that is darker/greener on the left, fading to a generic dark overlay on the right
+    background: linear-gradient(
+      to right,
+      rgba($color_1, 0.5) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+
+    .title {
+      font-size: 56px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+      text-transform: capitalize;
+      color: white;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 500;
+
+      .crumbLink {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $color_2;
+        }
+      }
+
+      .crumbText {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .separator {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+        margin: 0 4px;
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    // height: 300px;
+    margin-top: 70px;
+
+    .content {
+      .title {
+        font-size: 40px;
+      }
+      .breadcrumbs {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    // height: 250px;
+    margin-top: 60px;
+
+    .content {
+      .title {
+        font-size: 32px;
+      }
+    }
+  }
+}

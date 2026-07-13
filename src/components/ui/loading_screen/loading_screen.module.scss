@@ -1,0 +1,28 @@
+.LoadingScreen {
+  background-color: #fbfbfb;
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  @include flexCenter;
+  z-index: 10000;
+
+  background-color: $color_1;
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 255, 255, 0.02) 25%, $color_1 25%);
+  background-position:
+    40px 0,
+    40px 0,
+    0 0,
+    0 0;
+  background-size: 80px 80px;
+  background-repeat: repeat;
+
+  .logo {
+    position: fixed;
+  }
+}

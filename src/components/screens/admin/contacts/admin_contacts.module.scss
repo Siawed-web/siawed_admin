@@ -1,0 +1,127 @@
+.adminContacts {
+  background: $white;
+  @include defaultBox;
+  padding: 30px;
+  border-radius: $r;
+
+  .headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $blue-deep;
+      margin: 0;
+    }
+  }
+
+  .tableResponsive {
+    overflow-x: auto;
+  }
+
+  .contactsTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    th {
+      background-color: $parchment;
+      color: $slate;
+      font-weight: 600;
+      padding: 15px;
+      text-align: left;
+      border-bottom: 2px solid $mist;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 15px;
+      vertical-align: middle;
+      border-bottom: 1px solid $mist;
+      color: $charcoal;
+
+      .badge {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+
+        &.read {
+          background-color: #d1fae5;
+          color: #065f46;
+        }
+
+        &.unread {
+          background-color: #fef3c7;
+          color: #92400e;
+        }
+      }
+
+      .viewBtn {
+        padding: 6px 12px;
+        background-color: $blue-light;
+        color: $blue-deep;
+        border: none;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition:
+          background-color 0.2s,
+          color 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &:hover {
+          background-color: $blue;
+          color: $white;
+        }
+      }
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+}
+
+.modalContent {
+  .sectionBlock {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $mist;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    h5 {
+      color: $orange;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .dataRow {
+      display: flex;
+      margin-bottom: 10px;
+
+      .dataLabel {
+        width: 40%;
+        font-weight: 600;
+        color: $slate;
+      }
+
+      .dataValue {
+        width: 60%;
+        color: $charcoal;
+        word-wrap: break-word;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.SectionHeading {
+  margin-bottom: 50px;
+
+  p {
+    font-size: 13px !important;
+    color: $color_1;
+    text-transform: uppercase;
+
+    border: 1px solid $color_1;
+    width: fit-content;
+    padding: 2px 8px;
+    border-radius: 12px;
+
+    span {
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      background-color: $color_2;
+      margin: 2px 6px -1px 0;
+      border-radius: 50%;
+    }
+    // font-weight: 500;
+  }
+
+  h2 {
+    font-size: 40px;
+
+    font-weight: 600;
+    color: $color_1;
+    margin: 8px 0;
+    // color: white;
+  }
+
+  small {
+    color: grey;
+  }
+
+  &.v2 {
+    p {
+      color: $color_b1;
+    }
+
+    h2 {
+      color: white;
+    }
+  }
+
+  &.v3 {
+    p {
+      color: $color_b1;
+    }
+
+    h2 {
+      color: $color_1;
+    }
+  }
+
+  @include respond-below(md) {
+    p {
+      // font-size: 18px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+  }
+}

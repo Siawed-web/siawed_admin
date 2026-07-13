@@ -1,0 +1,105 @@
+.enquiryModal {
+  :global(.modalContent) {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.modalHeader {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 30px;
+
+  .modalTitle {
+    color: $color_b1; // Use deep theme color
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.modalBody {
+  padding: 30px;
+}
+
+.formControl {
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  padding: 12px 15px;
+  font-size: 15px;
+  color: #333;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: none;
+
+  &:focus {
+    border-color: $color_1;
+    box-shadow: 0 0 0 0.2rem rgba(245, 186, 23, 0.25);
+  }
+
+  &::placeholder {
+    color: #1a1a1a; // Very dark placeholders like the screenshot
+    opacity: 1;
+  }
+}
+
+// Phone input styling to remove border between flag and input
+.phoneInputGroup {
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  background-color: #fff;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:focus-within {
+    border-color: $color_1;
+    box-shadow: 0 0 0 0.2rem rgba(245, 186, 23, 0.25);
+  }
+
+  .flagAddon {
+    background-color: #fff;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    padding: 0 5px 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .flagIcon {
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .caretIcon {
+      font-size: 10px;
+      color: #666;
+    }
+  }
+
+  .formControl {
+    border: none;
+    margin: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: $color_1; // Orange/Yellow accent
+  border: none;
+  color: #fff; // Adjust contrast if needed, $color_1 is #f5ba17. White should be mostly readable if font weight is bold
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: darken(#f5ba17, 10%);
+    color: #fff;
+  }
+}
